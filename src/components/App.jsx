@@ -17,18 +17,11 @@ number: ''
 
 
 handleChange = (e) => {
-this.setState({
-name: e.target.value
-});
-};
-
-
-
-handleChange2 = (e) => {
-this.setState({
-number: e.target.value
-});
-};
+  const {name, value} = e.currentTarget;
+  this.setState({
+    [name]:value
+  });
+  };
 
 
 
@@ -84,7 +77,7 @@ return (
   <h1>Phonebook</h1>
     <Contacts
       handleChange={this.handleChange}
-      handleChange2={this.handleChange2}
+      handleChange2={this.handleChange}
       handleSubmit={this.handleSubmit}
     />
     <h2>Contacts</h2>
